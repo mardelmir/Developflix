@@ -3,7 +3,7 @@ const peliculas = [
       "adult": false,
       "backdrop_path": "/eSsMzJpzAwCa69tm6Wco2il44aJ.jpg",
       "genre_ids": [
-          28,
+          28, 
           80,
           18,
           53
@@ -192,7 +192,7 @@ const peliculas = [
       "original_title": "Desperation Road",
       "overview": "After 11 years in a Mississippi state prison, Russell Gaines struggles to leave his past sins behind him as he returns home to his stoic father, Mitchell. One fateful night he meets Maben, a young mother with nothing but a stolen gun and a murdered police deputy to her name. Desperate and on the run, Russell and Maben must trust one another to escape their own circumstances, before the truths of their intertwined violent past threatens to destroy them.",
       "popularity": 664.924,
-      "poster_path": "https://image.tmdb.org/t/p/w500/tPyj6Gii1HrnzCbJXEF7JdSFkQ8.jpg",
+      "poster_path": "/tPyj6Gii1HrnzCbJXEF7JdSFkQ8.jpg",
       "release_date": "2023-10-19",
       "title": "Desperation Road",
       "video": false,

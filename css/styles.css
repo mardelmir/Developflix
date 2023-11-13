@@ -15,4 +15,19 @@ h2 {
   margin-bottom: 10px;
 }
 
+.genero {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
 
+.genero>div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: baseline;
+  align-items: center;
+  width: 16vW;
+  font-weight: bold;
+}
