@@ -26,11 +26,13 @@ peliculas.filter((element) => element.genre_ids.find((genre) => {
 
     let poster = document.createElement('img');
     poster.src = `https://image.tmdb.org/t/p/w200${element.poster_path}`;
-    poster.alt = `Poster de la película ${element.title}`
+    poster.alt = `Poster de la película ${element.title}`;
 
     let divPeli = document.createElement('div');
     divPeli.appendChild(titulo);
     titulo.insertAdjacentElement('beforebegin', poster);
+    divPeli.classList.add('cartel', '--mostrar');
+
 
     if (genre === 28) {
         divAccion.appendChild(divPeli);
@@ -39,8 +41,18 @@ peliculas.filter((element) => element.genre_ids.find((genre) => {
     } else if (genre === 12) {
         divAventura.appendChild(divPeli);
     }
-
 }))
+
+// Info
+
+const info = document.querySelectorAll('.cartel');
+console.log(info)
+
+info.forEach((el) => {
+    el.addEventListener('click', () => {
+        el.classList.toggle('cartel--ocultar');
+    })
+})
 
 
 
