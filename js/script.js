@@ -7,7 +7,18 @@ const divAccion = document.getElementById('genero-28');
 const divThriller = document.getElementById('genero-53');
 const divAventura = document.getElementById('genero-12');
 
-// Filtro
+
+// Orden alfabético + clasificación
+
+peliculas.sort((a, b) => {
+    if (a.title == b.title) {
+        return 0;
+    }
+    if (a.title < b.title) {
+        return -1;
+    }
+    return 1;
+})
 
 peliculas.filter((element) => element.genre_ids.find((genre) => {
     let titulo = document.createElement('p');
@@ -17,7 +28,7 @@ peliculas.filter((element) => element.genre_ids.find((genre) => {
     poster.src = `https://image.tmdb.org/t/p/w200${element.poster_path}`;
     poster.alt = `Poster de la película ${element.title}`
 
-    let divPeli = document.createElement('div')
+    let divPeli = document.createElement('div');
     divPeli.appendChild(titulo);
     titulo.insertAdjacentElement('beforebegin', poster);
 
@@ -28,11 +39,12 @@ peliculas.filter((element) => element.genre_ids.find((genre) => {
     } else if (genre === 12) {
         divAventura.appendChild(divPeli);
     }
+
 }))
 
 
 
-// Filtros
+/* Filtros
 
 const filtroAccion = peliculas.filter((elemento) => elemento.genre_ids.find((genero) => genero === 28));
 console.log(filtroAccion)
@@ -41,4 +53,6 @@ const filtroThriller = peliculas.filter((elemento) => elemento.genre_ids.find((g
 console.log(filtroThriller)
 
 const filtroAventura = peliculas.filter((elemento) => elemento.genre_ids.find((genero) => genero === 12));
-console.log(filtroAventura)
+console.log(filtroAventura)*/
+
+

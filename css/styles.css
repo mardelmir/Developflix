@@ -52,3 +52,7 @@ h2 {
   font-size: 15px;
   cursor: pointer;
 }
+
+.girada {
+  visibility: hidden;
+}
