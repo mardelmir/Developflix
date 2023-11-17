@@ -1,24 +1,12 @@
 import peliculas from './peliculas.js'
 
 
-// Secciones
-
 const divAccion = document.getElementById('genero-28');
 const divThriller = document.getElementById('genero-53');
 const divAventura = document.getElementById('genero-12');
 
 
-// Orden alfabético + clasificación
-
-peliculas.sort((a, b) => {
-    if (a.title == b.title) {
-        return 0;
-    }
-    if (a.title < b.title) {
-        return -1;
-    }
-    return 1;
-})
+peliculas.sort((a, b) => a.title > b.title ? 1 : -1)
 
 peliculas.filter((element) => element.genre_ids.find((genre) => {
     let titulo = document.createElement('p');
@@ -28,10 +16,15 @@ peliculas.filter((element) => element.genre_ids.find((genre) => {
     poster.src = `https://image.tmdb.org/t/p/w200${element.poster_path}`;
     poster.alt = `Poster de la película ${element.title}`;
 
+    let extra = document.createElement('p');
+    extra.innerHTML = `Estreno: ${element.release_date} <br /> Valoración: <strong>${element.vote_average}</strong>`;
+    extra.classList.add('oculto');
+
     let divPeli = document.createElement('div');
     divPeli.appendChild(titulo);
     titulo.insertAdjacentElement('beforebegin', poster);
-    divPeli.classList.add('cartel', '--mostrar');
+    titulo.insertAdjacentElement('afterend', extra);
+    divPeli.classList.add('cartel');
 
 
     if (genre === 28) {
@@ -42,29 +35,3 @@ peliculas.filter((element) => element.genre_ids.find((genre) => {
         divAventura.appendChild(divPeli);
     }
 }))
-
-// Info
-
-const info = document.querySelectorAll('.cartel');
-console.log(info)
-
-info.forEach((el) => {
-    el.addEventListener('click', () => {
-        el.classList.toggle('cartel--ocultar');
-    })
-})
-
-
-
-/* Filtros
-
-const filtroAccion = peliculas.filter((elemento) => elemento.genre_ids.find((genero) => genero === 28));
-console.log(filtroAccion)
-
-const filtroThriller = peliculas.filter((elemento) => elemento.genre_ids.find((genero) => genero === 53));
-console.log(filtroThriller)
-
-const filtroAventura = peliculas.filter((elemento) => elemento.genre_ids.find((genero) => genero === 12));
-console.log(filtroAventura)*/
-
-
